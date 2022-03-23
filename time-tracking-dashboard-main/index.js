@@ -108,14 +108,17 @@ const data = [
 const dailyBtn = document
   .querySelector("#daily")
   .addEventListener("click", function () {
-    const boxes = document.querySelectorAll(".box");
+    const hours = document.querySelectorAll(".hour");
+    const weeks = document.querySelectorAll(".week");
 
-    for (let i = 0; i < boxes.length; i++) {
-      const box = boxes[i];
+    console.log(hours);
+    for (let i = 0; i < hours.length; i++) {
+      const hour = hours[i];
+      const week = weeks[i];
       const item = data[i];
+      hour.innerText = item.timeframes.daily.current + "hrs";
+      week.innerText = item.timeframes.daily.previous + "hrs";
       console.log(item);
-      const header = (box.querySelector(".hour").innerText = "Filip");
-      const header1 = (box.querySelector(".week").innerText = "Alex");
     }
   });
 
